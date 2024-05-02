@@ -5,6 +5,13 @@
 
 #include <main.h>
 #include <stdbool.h>
+
+#define LCD_ADDR (0x27 << 1)
+#define PIN_RS    (1 << 0)
+#define PIN_EN    (1 << 2)
+#define LCD_DELAY_MS 30
+
+/* Functions prototypes */
 HAL_StatusTypeDef LCD_SendSignal(uint8_t addr, uint8_t data, uint8_t flags);
 void LCD_SendCommand(uint8_t addr, uint8_t cmd);
 void LCD_SendSymbol(uint8_t addr, uint8_t symbol);
